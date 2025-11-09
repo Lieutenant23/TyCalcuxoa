@@ -1,0 +1,305 @@
+.expression {
+  margin: 4px 0;
+  padding: 4px 0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.expression[style*="position: absolute"] {
+  margin: 0;
+  padding: 4px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  min-width: auto;
+}
+
+
+
+.expression[style*="position: absolute"] .expression-input {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression[style*="position: absolute"] .expression-input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression[style*="position: absolute"] .expression-input:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression[style*="position: absolute"] .expression-input:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression[style*="position: absolute"] .expression-content {
+  width: auto !important;
+  min-width: auto !important;
+  flex-wrap: nowrap;
+}
+
+.expression[style*="position: absolute"] .result-container {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.expression[style*="position: absolute"] .result-value:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.expression[style*="position: absolute"] .expression-text {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression[style*="position: absolute"] .expression-content {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+.expression[style*="position: absolute"] .result-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-left: 5px !important;
+  white-space: nowrap !important;
+}
+
+.expression[style*="position: absolute"] .expression-input {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 50px !important;
+  max-width: 200px !important;
+}
+
+.expression[style*="position: absolute"] .expression-text {
+  display: inline-block !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+.expression.selected {
+  background-color: rgba(135, 206, 235, 0.1);
+}
+
+.expression[style*="position: absolute"].selected {
+  background-color: transparent !important;
+}
+
+.expression[style*="position: absolute"].selected {
+  background-color: transparent !important;
+}
+
+.expression-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: text;
+  justify-content: flex-start;
+}
+
+.expression-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--text-dark);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.expression-input:focus {
+  background: transparent;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.expression[style*="position: absolute"] .expression-input {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression[style*="position: absolute"] .expression-input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.expression-text {
+  padding: 4px;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.empty-expression {
+  display: inline-block;
+  min-height: 1em;
+  width: 2px;
+}
+
+.expression.selected .empty-expression {
+  background-color: var(--text-dark);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.clickable-number {
+  color: var(--primary-orange);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.clickable-number:hover {
+  background-color: rgba(255, 140, 0, 0.1);
+}
+
+.selected-number {
+  background-color: #ff8c00 !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.selected-number:hover {
+  background-color: #ff7700 !important;
+}
+
+.number-with-label {
+  position: relative;
+  display: inline-block;
+}
+
+.number-label {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #555;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1px 3px;
+  border-radius: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  border: 1px solid #ccc;
+  font-weight: 400;
+  line-height: 1.2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.equals {
+  color: var(--text-light);
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.result-value {
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 40px;
+  text-align: center;
+}
+
+.result-value:hover {
+  background-color: #6bb6d6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .expression-content {
+    font-size: 20px;
+  }
+  
+  .result-value {
+    padding: 6px 12px;
+    font-size: 18px;
+  }
+  
+  .equals {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expression {
+    margin: 6px 0;
+  }
+  
+  .expression-content {
+    font-size: 18px;
+    /* Manter flex-direction: row para resultado na mesma linha */
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .result-container {
+    margin-left: 10px;
+    /* Remover margin-top para manter na mesma linha */
+  }
+  
+  .result-value {
+    padding: 4px 10px;
+    font-size: 16px;
+  }
+}

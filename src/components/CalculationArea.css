@@ -1,0 +1,33 @@
+.calculation-area {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  position: relative;
+  background-color: var(--white);
+  margin: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px var(--shadow);
+  cursor: text;
+}
+
+.expressions-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .calculation-area {
+    margin: 5px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculation-area {
+    margin: 2px;
+    padding: 10px;
+  }
+}

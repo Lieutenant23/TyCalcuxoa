@@ -1,0 +1,183 @@
+.keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20vh;
+  min-height: 200px;
+  background: var(--bg-light);
+  border-top: 1px solid var(--border-color);
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1px;
+  padding: 6px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.keyboard-row {
+  display: grid;
+  gap: 1px;
+  min-height: 32px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.keyboard-row:nth-child(5) {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.keyboard-button {
+  background: white;
+  border: none;
+  border-radius: 4px;
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  height: 100%;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Estilos para botões combinados */
+.keyboard-button.parentheses,
+.keyboard-button.percent-comma {
+  position: relative;
+  font-size: clamp(12px, 3.5vw, 16px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0;
+}
+
+.keyboard-button.parentheses::after,
+.keyboard-button.percent-comma::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  bottom: 15%;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+  border-radius: 1px;
+  z-index: 1;
+}
+
+.keyboard-button.parentheses .left-symbol,
+.keyboard-button.percent-comma .left-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.keyboard-button.parentheses .right-symbol,
+.keyboard-button.percent-comma .right-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.keyboard-button.operator {
+  background-color: var(--primary-orange);
+  color: white;
+}
+
+.keyboard-button.empty {
+  background: transparent;
+  border: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.keyboard-button.operator:hover {
+  background-color: #e67e00;
+}
+
+.keyboard-button.function {
+  background-color: #6c757d;
+  color: white;
+}
+
+.keyboard-button.function:hover {
+  background-color: #5a6268;
+}
+
+.keyboard-button.equals {
+  background-color: var(--primary-orange);
+  color: white;
+  font-weight: 600;
+}
+
+.keyboard-button.equals:hover {
+  background-color: #e67e00;
+}
+
+.keyboard-button:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.keyboard-button:active {
+  background-color: #dee2e6;
+  transform: translateY(0);
+}
+
+
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .keyboard {
+    height: 25vh;
+    min-height: 220px;
+    padding: 6px;
+  }
+  
+  .keyboard-button {
+    font-size: clamp(12px, 5vw, 16px);
+    min-height: 28px;
+  }
+  
+
+}
+
+@media (max-width: 480px) {
+  .keyboard {
+    height: 30vh;
+    min-height: 240px;
+    padding: 4px;
+  }
+  
+  .keyboard-row {
+    gap: 2px;
+  }
+  
+  .keyboard-button {
+    font-size: clamp(10px, 6vw, 14px);
+    min-height: 24px;
+    border-radius: 8px;
+  }
+  
+
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .keyboard {
+    height: 40vh;
+    min-height: 180px;
+  }
+  
+  .keyboard-button {
+    min-height: 35px;
+    font-size: 14px;
+  }
+  
+
+}

@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-gray);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .app {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    font-size: 12px;
+  }
+}
