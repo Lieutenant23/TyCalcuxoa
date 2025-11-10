@@ -192,7 +192,22 @@ function App() {
       }
     } else {
       // Criar primeira aba se não houver dados salvos
-      createNewTab();
+      const newTabId = createNewTab();
+      // Criar primeira expressão automaticamente
+      setTimeout(() => {
+        const newId = 1;
+        const newExpression = {
+          id: newId,
+          text: '',
+          result: null,
+          dependencies: [],
+          dependents: [],
+          position: { x: 20, y: 20 },
+          labels: {}
+        };
+        setExpressions([newExpression]);
+        setSelectedExpression(newId);
+      }, 100);
     }
   }, []);
 
