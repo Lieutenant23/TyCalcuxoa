@@ -317,9 +317,9 @@ const Expression = ({
         const numberKey = `${index}-${parseFloat(part)}`;
         const isNumberSelected = selectedNumbers.has(numberKey);
         
-        // Formatar o número com pontos se for um número inteiro >= 1000
-        const formattedPart = /^\d+$/.test(part) && parseFloat(part) >= 1000 ? 
-          formatNumber(parseFloat(part)) : part;
+        // Formatar o número (inteiros >= 1000 com pontos, decimais com no máximo 2 casas)
+        const numValue = parseFloat(part);
+        const formattedPart = formatNumber(numValue);
         
         const label = numberLabels[numberKey];
         return (
