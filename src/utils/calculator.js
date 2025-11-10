@@ -168,7 +168,7 @@ export const formatNumber = (num) => {
   };
 
   // Número máximo de casas decimais exibidas
-  const MAX_DECIMALS = 3;
+  const MAX_DECIMALS = 2;
   
   // Arredondar para evitar problemas de precisão de ponto flutuante
   const roundedNum = Math.round(num * Math.pow(10, MAX_DECIMALS)) / Math.pow(10, MAX_DECIMALS);
