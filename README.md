@@ -1,7 +1,6 @@
 # Tydlig Calculator
 
-Aplicação web em React para cálculos visuais com legendas e múltiplas expressões.
-
+Calculadora baseada na Tydlig, com reação em cadeia com possibilidades de salvar páginas.
 ## Como rodar
 
 - Requisitos: `Node.js >= 16` (recomendado `18 LTS`), `npm`
